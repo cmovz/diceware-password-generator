@@ -43,6 +43,9 @@ class Dictionary():
     return self + other
   
   def get_random_words(self, count):
+    if len(self.words) == 0:
+      raise ValueError('Dictionary is empty')
+    
     for _ in range(count):
       max_value = 0xffffffff - (0xffffffff % len(self.words)) - 1
       x = max_value + 1
