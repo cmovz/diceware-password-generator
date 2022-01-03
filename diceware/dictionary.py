@@ -50,17 +50,17 @@ class Dictionary():
     return self + other
   
   def get_random_words(self, count):
-    if len(self.words) == 0:
+    if len(self) == 0:
       raise ValueError('Dictionary is empty')
     
-    if len(self.words) > 0x100000000: 
+    if len(self) > 0x100000000: 
       raise ValueError('Dictionary has too many words')
     
     for _ in range(count):
-      max_value = 0x100000000 - (0x100000000 % len(self.words)) - 1
+      max_value = 0x100000000 - (0x100000000 % len(self)) - 1
       x = max_value + 1
       while x > max_value:
         bytes = os.urandom(4)
         x = int.from_bytes(bytes, byteorder='little', signed=False)
       
-      yield self[x % len(self.words)]
+      yield self[x % len(self)]
