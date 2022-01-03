@@ -5,8 +5,8 @@ class Dictionary():
   Dictionary to hold a list of words and generate random passwords.
   It overloads the relevant operations, working with any iterables.
   '''
-  def __init__(self, lines):
-    self.words = [line.strip() for line in lines]
+  def __init__(self, words):
+    self.words = [word.strip() for word in words]
   
   def __len__(self):
     return len(self.words)
