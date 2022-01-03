@@ -8,6 +8,9 @@ class Dictionary():
   def __init__(self, lines):
     self.words = [line.strip() for line in lines]
   
+  def __len__(self):
+    return len(self.words)
+  
   def __iter__(self):
     return iter(self.words)
   
