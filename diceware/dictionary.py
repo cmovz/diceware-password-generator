@@ -11,6 +11,9 @@ class Dictionary():
   def __len__(self):
     return len(self.words)
   
+  def __eq__(self, other):
+    return self.words == other.words
+  
   def __iter__(self):
     return iter(self.words)
   
