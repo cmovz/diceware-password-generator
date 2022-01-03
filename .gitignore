@@ -1,3 +1,4 @@
 build
 diceware.egg-info
 dist
+diceware/__pycache__
