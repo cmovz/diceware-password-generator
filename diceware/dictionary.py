@@ -51,7 +51,7 @@ class Dictionary():
       raise ValueError('Dictionary is empty')
     
     for _ in range(count):
-      max_value = 0xffffffff - (0xffffffff % len(self.words)) - 1
+      max_value = 0x100000000 - (0x100000000 % len(self.words)) - 1
       x = max_value + 1
       while x > max_value:
         bytes = os.urandom(4)
