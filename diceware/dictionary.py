@@ -6,7 +6,7 @@ class Dictionary():
   It overloads the relevant operations, working with any iterables.
   '''
   def __init__(self, words=()):
-    self.words = [word.strip() for word in words]
+    self.words = sorted(word.strip() for word in words)
   
   def __len__(self):
     return len(self.words)
