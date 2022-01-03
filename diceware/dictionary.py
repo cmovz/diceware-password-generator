@@ -12,8 +12,11 @@ class Dictionary():
     return len(self.words)
   
   def __eq__(self, other):
+    if not hasattr(other, 'words'):
+      return False
+
     return self.words == other.words
-  
+
   def __iter__(self):
     return iter(self.words)
   
