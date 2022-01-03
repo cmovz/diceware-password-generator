@@ -50,6 +50,9 @@ class Dictionary():
     if len(self.words) == 0:
       raise ValueError('Dictionary is empty')
     
+    if len(self.words) > 0x100000000: 
+      raise ValueError('Dictionary has too many words')
+    
     for _ in range(count):
       max_value = 0x100000000 - (0x100000000 % len(self.words)) - 1
       x = max_value + 1
