@@ -1,6 +1,10 @@
 import os
 
 class Dictionary():
+  '''
+  Dictionary to hold a list of words and generate random passwords.
+  It overloads the relevant operations, working with any iterables.
+  '''
   def __init__(self, lines):
     self.words = [line.strip() for line in lines]
   
