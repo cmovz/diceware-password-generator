@@ -27,7 +27,9 @@ class Dictionary():
   def __add__(self, other):
     s = set(self)
     for word in other:
-      s.add(word.strip())
+      stripped = word.strip()
+      if stripped:
+        s.add(stripped)
 
     return Dictionary(sorted(s))
   
